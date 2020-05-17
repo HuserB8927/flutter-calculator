@@ -1,6 +1,6 @@
-# simpleinterestcalculator
+# My first Flutter application
 
-A new Flutter application.
+![](images/calculator.png)
 
 ## Getting Started
 
