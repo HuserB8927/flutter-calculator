@@ -30,11 +30,18 @@ class SimpleInterestForm extends StatefulWidget {
 class _SimpleInterestFormState extends State<SimpleInterestForm> {
   var _currencies = ["EUR", "HUF", "USD", "ZAR"];
   final _minimumPadding = 5.0;
-  var _currentItemSelected = "HUF"; //Storing the currently selected item from the dropdown by the User -- doing some logic
+  var _currentItemSelected = ""; //Storing the currently selected item from the dropdown by the User -- doing some logic
+
+  @override
+  void initState() { //Here we want to instantiate some values when State of Widget (_SimpleInterestFormState) created
+    super.initState();
+    _currentItemSelected = _currencies[0];
+  }
 
   TextEditingController principalControlled = TextEditingController(); //Whatever the user enter in the textfield we can extraxt that value and use it with logic
   TextEditingController interestControlled = TextEditingController();
   TextEditingController termControlled = TextEditingController();
+
 
   var displayResult = "";
 
@@ -202,6 +209,9 @@ class _SimpleInterestFormState extends State<SimpleInterestForm> {
     principalControlled.text = "";
     interestControlled.text = "";
     termControlled.text = "";
+    displayResult = "";
+    _currentItemSelected = _currencies[0];
+
   }
 }
 
